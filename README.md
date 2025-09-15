@@ -151,22 +151,6 @@ for i in range(1, max(multi_error_counts) + 1):
     print(f"  {i} error(s): {count} samples")
 ```
 
-### Using with Hugging Face Datasets
-
-```python
-from datasets import load_dataset
-
-# Load single-error version (recommended for initial evaluation)
-dataset_single = load_dataset("your-org/refact", "single_error")
-
-# Load multi-error version (for comprehensive evaluation)  
-dataset_multi = load_dataset("your-org/refact", "multi_error")
-
-# Access the dataset (single split design)
-data_single = dataset_single['train']  # 1,251 samples
-data_multi = dataset_multi['train']    # 1,001 samples
-```
-
 ### Data Splits
 
 ReFACT uses a **single split design** - all samples are provided as training data, allowing researchers to create their own train/validation/test splits based on their experimental needs. This design choice maximizes flexibility for different evaluation scenarios.
@@ -220,7 +204,6 @@ ReFACT/
 ├── README.md                        # This file  
 ├── LICENSE                          # MIT license
 ├── requirements.txt                 # Python dependencies
-├── CITATION.cff                     # GitHub citation format
 ```
 
 ## ❓ FAQ
@@ -248,18 +231,9 @@ If you use ReFACT in your research, please cite:
 ```bibtex
 @misc{refact2025,
   title={ReFACT: A Benchmark for Scientific Confabulation Detection with Positional Error Annotations},
-  author={[Authors]},
+  author={[Yindong Wang, Martin Preiß, Margarita Bugueño, Jan Vincent Hoffbauer, Abdullatif Ghajar, Tolga Buz,  Gerard de Melo]},
   year={2025},
   note={Dataset and benchmark for scientific factuality evaluation},
-  url={https://github.com/your-org/refact}
+  url={https://github.com/ddz5431/ReFACT}
 }
 ```
-
-## 🤝 Contributing
-
-We welcome contributions to improve ReFACT! Please:
-- Open an issue for bug reports or feature requests  
-- Submit pull requests for improvements
-- Follow our code of conduct and contribution guidelines
-
----
