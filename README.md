@@ -217,18 +217,10 @@ The benchmark results were obtained using zero-shot prompting with task-specific
 ReFACT/
 ├── dataset_single_error.jsonl       # Single-error version (1,251 samples)
 ├── dataset_multi_error.jsonl        # Multi-error version (1,001 samples)
-├── create_paraphrased_dataset.py    # Script to generate paraphrased versions  
 ├── README.md                        # This file  
 ├── LICENSE                          # MIT license
 ├── requirements.txt                 # Python dependencies
 ├── CITATION.cff                     # GitHub citation format
-├── ReFACT_Scientific_Confabulation.pdf # Research paper
-├── scripts/
-│   └── cleanup_dataset.py           # Dataset cleanup utilities
-└── huggingface/                     # Hugging Face Hub package
-    ├── README.md                    # Dataset card
-    ├── refact.py                   # HF Datasets loading script
-    └── dataset_infos.json          # HF metadata
 ```
 
 ## ❓ FAQ
