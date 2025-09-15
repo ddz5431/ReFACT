@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "ReFACT: A Benchmark for Scientific Confabulation Detection with Positional Error Annotations"
+authors:
+  - name: "Anonymous"
+    note: "Full author information will be revealed upon publication"
+repository-code: "https://github.com/anonymous/refact"
+url: "https://github.com/anonymous/refact"
+abstract: "ReFACT (Reddit False And Correct Texts) is a benchmark dataset for detecting, localizing, and correcting scientific confabulation in Large Language Models (LLMs). The dataset contains 1,001 expert-annotated question-answer pairs spanning diverse scientific domains, designed to evaluate fine-grained factuality in scientific discourse."
+keywords:
+  - "scientific confabulation"
+  - "factuality"
+  - "benchmark"
+  - "large language models"
+  - "hallucination detection"
+  - "reddit"
+  - "askscience"
+license: MIT
+version: "1.0.0"
+date-released: 2024-09-05
+preferred-citation:
+  type: conference-paper
+  title: "ReFACT: A Benchmark for Scientific Confabulation Detection with Positional Error Annotations"
+  authors:
+    - name: "Anonymous"
+      note: "Full author information will be revealed upon publication"
+  conference:
+  year: 2024
