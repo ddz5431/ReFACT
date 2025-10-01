@@ -50,8 +50,8 @@ pip install pandas
 
 The dataset is available in this repository in two versions:
 
-- **`dataset_multi_error.jsonl`**: Multi-error version with 1,001 samples - 165 samples contain multiple error spans *(primary dataset for official benchmarking)*
-- **`dataset_single_error.jsonl`**: Single-error version with 1,251 samples - each sample contains exactly one error span *(simplified variant for development)*
+- **`refact_multi_error.jsonl`**: Multi-error version with 1,001 samples - 165 samples contain multiple error spans *(primary dataset for official benchmarking)*
+- **`refact_single_error.jsonl`**: Single-error version with 1,251 samples - each sample contains exactly one error span *(simplified variant for development)*
 
 Both versions are also available via Hugging Face Hub (coming soon).
 
@@ -94,7 +94,7 @@ The dataset contains two types of scientific confabulations:
 
 ReFACT provides two complementary versions derived from the same 1,001 expert-annotated samples:
 
-**Multi-Error Version** (`dataset_multi_error.jsonl`) - *Primary dataset as described in the paper*:
+**Multi-Error Version** (`refact_multi_error.jsonl`) - *Primary dataset as described in the paper*:
 - 1,001 samples total  
 - 165 samples (16.5%) contain multiple error spans
 - Multiple errors occur when an entity and its coreferences are replaced throughout the text
@@ -102,7 +102,7 @@ ReFACT provides two complementary versions derived from the same 1,001 expert-an
 - More challenging and realistic evaluation of model robustness
 - **Recommended for official benchmarking and paper comparisons**
 
-**Single-Error Version** (`dataset_single_error.jsonl`) - *Simplified evaluation variant*:
+**Single-Error Version** (`refact_single_error.jsonl`) - *Simplified evaluation variant*:
 - 1,251 samples total
 - Each sample contains exactly one error span
 - Useful for initial method development and isolating detection/localization performance
@@ -191,13 +191,11 @@ The evaluation framework is designed to be:
 
 ```
 ReFACT/
-├── dataset_single_error.jsonl       # Single-error version (1,251 samples)
-├── dataset_multi_error.jsonl        # Multi-error version (1,001 samples)
-├── README.md                        # This file  
-├── LICENSE                          # MIT license
-├── CITATION.cff                     # Citation metadata (CFF format)
-├── CITATION.bib                     # BibTeX citation
-├── requirements.txt                 # Python dependencies
+├── refact_single_error.jsonl       # Single-error version (1,251 samples)
+├── refact_multi_error.jsonl        # Multi-error version (1,001 samples)
+├── README.md                       # This file  
+├── LICENSE                         # MIT license
+├── CITATION.bib                    # BibTeX citation
 ```
 
 ## FAQ
@@ -209,7 +207,7 @@ A: ReFACT focuses specifically on subtle scientific confabulations that require 
 A: We used a systematic pipeline with Gemma-2-27B-it for fact extraction and transformation generation, followed by rigorous human validation (3 annotators per sample, ≥2/3 consensus) to ensure realistic, challenging confabulations.
 
 **Q: Which dataset version should I use?**
-A: Use `dataset_multi_error.jsonl` for **official benchmarking and paper comparisons** (this is the primary dataset described in the paper with 1,001 samples). Use `dataset_single_error.jsonl` for initial evaluation, method development, and ablation studies where single-error simplification is beneficial.
+A: Use `refact_multi_error.jsonl` for **official benchmarking and paper comparisons** (this is the primary dataset described in the paper with 1,001 samples). Use `refact_single_error.jsonl` for initial evaluation, method development, and ablation studies where single-error simplification is beneficial.
 
 **Q: Can I use this for commercial applications?**
 A: Yes, the dataset is released under MIT license for both research and commercial use.
