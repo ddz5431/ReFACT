@@ -1,6 +1,5 @@
 # ReFACT: A Benchmark for Scientific Confabulation Detection with Positional Error Annotations
-
-[![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
+[![arXiv](https://img.shields.io/badge/arXiv-2509.25868-b31b1b.svg)](https://arxiv.org/abs/2509.25868)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Dataset](https://img.shields.io/badge/Dataset-1001%20samples-green.svg)
 
@@ -35,10 +34,10 @@ Even state-of-the-art models struggle significantly with scientific confabulatio
 *Ind Judgment: Independent Detection (Accuracy/F1), Comp Judgment: Comparative Detection (Accuracy/F1), Neg Local: Negation Localization (Accuracy/IoU), Ent Local: Entity Localization (Accuracy/IoU), Ent Correct: Entity Correction (Exact Match), Avg Acc: Average Accuracy across tasks.
 
 **Key Findings:**
-- **Detection shows limitations**: Independent judgment achieves 49-71% accuracy, but comparative judgment (directly choosing between factual vs. confabulated answers) drops to near-random performance (48-60%), even for the best performing models.
-- **Entity localization is substantially harder**: Models achieve 0-69% accuracy on negation localization but only 4-47% on entity localization, revealing particular difficulty with subtle terminological substitutions.
+- **Detection shows limitations**: Independent judgment achieves 49-71% accuracy, but comparative judgment (directly choosing between factual vs. confabulated answers) drops to near-random performance (48-60%), even for the best-performing models.
+- **Entity localization is substantially harder**: Accuracy ranges from 4-47% for entity localization compared to 0-69% for negation localization across all models. Even the best-performing model (GPT-4o) achieves only 47% on entity localization versus 66% on negation detection, revealing particular difficulty with subtle terminological substitutions.
 - **Correction remains largely unsolved**: Exact match accuracy ranges from 0-28%, showing models struggle to generate accurate factual corrections even when error locations are explicitly marked.
-- **Implications for automated evaluation**: Near-random comparative judgment performance (50-60%) raises fundamental concerns about the reliability of LLM-as-Judge paradigms across evaluation tasks requiring nuanced discrimination.
+- **Implications for LLM-as-Judge**: Near-random comparative judgment performance (48-60%) raises fundamental concerns about the reliability of LLM-as-Judge paradigms for evaluation tasks requiring nuanced discrimination.
 
 ## Installation & Requirements
 
@@ -227,9 +226,9 @@ If you use ReFACT in your research, please cite our paper:
 @article{wang2025refact,
   title={{ReFACT}: A Benchmark for Scientific Confabulation Detection with Positional Error Annotations},
   author={Wang, Yindong and Prei{\ss}, Martin and Bague{\~n}o, Margarita and Hoffbauer, Jan Vincent and Ghajar, Abdullatif and Buz, Tolga and de Melo, Gerard},
-  journal={arXiv preprint arXiv:XXXX.XXXXX},
+  journal={arXiv preprint arXiv:2509.25868},
   year={2025},
-  url={https://arxiv.org/abs/XXXX.XXXXX}
+  url={https://arxiv.org/abs/2509.25868}
 }
 ```
 
