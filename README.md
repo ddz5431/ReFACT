@@ -1,5 +1,6 @@
 # ReFACT: A Benchmark for Scientific Confabulation Detection with Positional Error Annotations
 [![arXiv](https://img.shields.io/badge/arXiv-2509.25868-b31b1b.svg)](https://arxiv.org/abs/2509.25868)
+[![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-Dataset-yellow.svg)](https://huggingface.co/datasets/ddz5431/refact)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Dataset](https://img.shields.io/badge/Dataset-1001%20samples-green.svg)
 
@@ -40,9 +41,28 @@ Even state-of-the-art models struggle significantly with scientific confabulatio
 
 ## Quick Start
 
+### Option 1: Load from HuggingFace 🤗 (Recommended)
+
 ```bash
-# Python 3.9+ required
-pip install pandas
+pip install datasets
+```
+
+```python
+from datasets import load_dataset
+
+# Load multi-error version (for official benchmarking)
+dataset = load_dataset('ddz5431/refact')
+
+# Load single-error version (for development)
+dataset_single = load_dataset('ddz5431/refact', 'single_error')
+```
+
+### Option 2: Load from Local Files
+
+```bash
+# Clone this repository
+git clone https://github.com/ddz5431/ReFACT.git
+cd ReFACT
 ```
 
 **Dataset files:**
@@ -78,6 +98,16 @@ pip install pandas
 
 ### Loading the Dataset
 
+**From HuggingFace:**
+```python
+from datasets import load_dataset
+
+# Multi-error (default)
+dataset = load_dataset('ddz5431/refact')
+print(dataset['train'][0])
+```
+
+**From local JSONL files:**
 ```python
 import json
 with open('refact_multi_error.jsonl', 'r') as f:
@@ -121,11 +151,20 @@ ReFACT/
 
 ## FAQ
 
+**Q: How do I access the dataset?**  
+A: The easiest way is via HuggingFace: `load_dataset('ddz5431/refact')`. Alternatively, download the JSONL files from this repository.
+
 **Q: What makes ReFACT unique?**  
 A: Unlike benchmarks that rely on synthetic corruption or automatic perturbations of Wikipedia/LLM-generated text, ReFACT combines real community Q&As from r/AskScience with systematic transformations and rigorous human verification. This produces subtle, plausible confabulations that require domain expertise to detect. Additionally, ReFACT provides span-level error annotations and enables three-tier evaluation (detection, localization, correction) - not just binary classification.
 
 **Q: Which version should I use?**  
-A: Use `refact_multi_error.jsonl` for official benchmarking; `refact_single_error.jsonl` for development.
+A: Use the default configuration (multi-error, 1,001 samples) for official benchmarking; use `single_error` (1,251 samples) for development.
+
+## Links
+
+- **HuggingFace Dataset**: [huggingface.co/datasets/ddz5431/refact](https://huggingface.co/datasets/ddz5431/refact)
+- **Paper (arXiv)**: [arxiv.org/abs/2509.25868](https://arxiv.org/abs/2509.25868)
+- **GitHub Repository**: [github.com/ddz5431/ReFACT](https://github.com/ddz5431/ReFACT)
 
 ## License & Citation
 
@@ -133,9 +172,13 @@ Released under [MIT License](LICENSE). If you use ReFACT, please cite:
 
 ```bibtex
 @article{wang2025refact,
-  title={{ReFACT}: A Benchmark for Scientific Confabulation Detection with Positional Error Annotations},
-  author={Wang, Yindong and Prei{\ss}, Martin and Bague{\~n}o, Margarita and Hoffbauer, Jan Vincent and Ghajar, Abdullatif and Buz, Tolga and de Melo, Gerard},
-  journal={arXiv preprint arXiv:2509.25868},
-  year={2025}
+  title        = {{ReFACT}: A Benchmark for Scientific Confabulation Detection with Positional Error Annotations},
+  author       = {Wang, Yindong and Prei{\ss}, Martin and Bague{\~n}o, Margarita and Hoffbauer, Jan Vincent and Ghajar, Abdullatif and Buz, Tolga and de Melo, Gerard},
+  journal      = {arXiv preprint arXiv:2509.25868},
+  year         = {2025},
+  eprint       = {2509.25868},
+  archivePrefix= {arXiv},
+  primaryClass = {cs.CL},
+  url          = {https://arxiv.org/abs/2509.25868},
 }
 ```
