@@ -17,7 +17,7 @@ The dataset contains 1,001 expert-annotated question-answer pairs spanning diver
 ### Key Features
 
 - **1,001 expert-annotated samples** across 10+ scientific domains
-- **Three-tier evaluation framework**: Detection → Localization → Correction  
+- **Three evaluation tasks with varying difficulty**: Detection, Localization, Correction  
 - **Two transformation types**: Logical Negation and Entity Replacement
 - **Human-verified quality** with multi-annotator consensus
 - **Real-world grounding** from r/AskScience community content
@@ -50,10 +50,10 @@ pip install datasets
 ```python
 from datasets import load_dataset
 
-# Load multi-error version (for official benchmarking)
+# Load multi-error version (used for LLM experiments in the paper)
 dataset = load_dataset('ddz5431/refact')
 
-# Load single-error version (for development)
+# Load single-error version (broader granularity for development)
 dataset_single = load_dataset('ddz5431/refact', 'single_error')
 ```
 
@@ -66,8 +66,8 @@ cd ReFACT
 ```
 
 **Dataset files:**
-- `refact_multi_error.jsonl` (1,001 samples) - **Primary dataset for benchmarking**
-- `refact_single_error.jsonl` (1,251 samples) - Simplified variant for development
+- `refact_multi_error.jsonl` (1,001 samples) - **Used for LLM experiments in the paper**
+- `refact_single_error.jsonl` (1,251 samples) - Broader granularity for development
 
 ### Dataset Format
 
@@ -93,8 +93,8 @@ cd ReFACT
 - **Entity Swap**: "DNA" → "RNA"
 
 **Dataset versions:**
-- **Multi-error** (1,001 samples): 16.5% contain multiple error spans from coreference replacement. Use for official benchmarking.
-- **Single-error** (1,251 samples): Each sample has exactly one error span. Use for development.
+- **Multi-error** (1,001 samples): 16.5% contain multiple error spans from coreference replacement. Used for LLM experiments in the paper.
+- **Single-error** (1,251 samples): Each sample has exactly one error span. Provides broader granularity for development.
 
 ### Loading the Dataset
 
@@ -116,7 +116,7 @@ with open('refact_multi_error.jsonl', 'r') as f:
 
 ## Evaluation Tasks
 
-ReFACT evaluates three progressive capabilities:
+ReFACT evaluates three capabilities with varying difficulty:
 
 1. **Detection** - Binary classification (factual vs. confabulated)  
    *Metrics: Accuracy, F1*
@@ -155,10 +155,10 @@ ReFACT/
 A: The easiest way is via HuggingFace: `load_dataset('ddz5431/refact')`. Alternatively, download the JSONL files from this repository.
 
 **Q: What makes ReFACT unique?**  
-A: Unlike benchmarks that rely on synthetic corruption or automatic perturbations of Wikipedia/LLM-generated text, ReFACT combines real community Q&As from r/AskScience with systematic transformations and rigorous human verification. This produces subtle, plausible confabulations that require domain expertise to detect. Additionally, ReFACT provides span-level error annotations and enables three-tier evaluation (detection, localization, correction) - not just binary classification.
+A: Unlike benchmarks that only rely on synthetic corruption or automatic perturbations of Wikipedia/LLM-generated text, ReFACT combines real community Q&As from r/AskScience with systematic transformations and rigorous human verification. This produces subtle, plausible confabulations that require domain expertise to detect. Additionally, ReFACT provides span-level error annotations and enables three evaluation tasks with varying difficulty (detection, localization, correction) - not just binary classification.
 
 **Q: Which version should I use?**  
-A: Use the default configuration (multi-error, 1,001 samples) for official benchmarking; use `single_error` (1,251 samples) for development.
+A: Use the default configuration (multi-error, 1,001 samples) for LLM experiments; use `single_error` (1,251 samples) for broader granularity development.
 
 ## Links
 
