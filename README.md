@@ -1,7 +1,7 @@
 # ReFACT: A Benchmark for Scientific Confabulation Detection with Positional Error Annotations
 [![arXiv](https://img.shields.io/badge/arXiv-2509.25868-b31b1b.svg)](https://arxiv.org/abs/2509.25868)
 [![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-Dataset-yellow.svg)](https://huggingface.co/datasets/ddz5431/refact)
-![License](https://img.shields.io/badge/License-MIT-blue.svg)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](LICENSE-DATA)
 ![Dataset](https://img.shields.io/badge/Dataset-1001%20samples-green.svg)
 
 **ReFACT** (Reddit False And Correct Texts) is a benchmark dataset for evaluating how Large Language Models detect, localize, and correct scientific confabulation.
@@ -164,11 +164,16 @@ A: Use the default configuration (multi-error, 1,001 samples) for official bench
 
 - **HuggingFace Dataset**: [huggingface.co/datasets/ddz5431/refact](https://huggingface.co/datasets/ddz5431/refact)
 - **Paper (arXiv)**: [arxiv.org/abs/2509.25868](https://arxiv.org/abs/2509.25868)
-- **GitHub Repository**: [github.com/ddz5431/ReFACT](https://github.com/ddz5431/ReFACT)
+- **GitHub**: [github.com/ddz5431/ReFACT](https://github.com/ddz5431/ReFACT)
 
-## License & Citation
+## License
 
-Released under [MIT License](LICENSE). If you use ReFACT, please cite:
+This dataset is released under  
+[Creative Commons Attribution 4.0 International License](LICENSE-DATA)
+
+## Citation
+
+If you use ReFACT, please cite:
 
 ```bibtex
 @article{wang2025refact,
