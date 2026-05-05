@@ -1,8 +1,9 @@
 # ReFACT: A Benchmark for Scientific Confabulation Detection with Positional Error Annotations
+[![EACL 2026](https://img.shields.io/badge/EACL-2026-blue.svg)](https://arxiv.org/abs/2509.25868)
 [![arXiv](https://img.shields.io/badge/arXiv-2509.25868-b31b1b.svg)](https://arxiv.org/abs/2509.25868)
 [![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-Dataset-yellow.svg)](https://huggingface.co/datasets/ddz5431/refact)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](LICENSE-DATA)
-![Dataset](https://img.shields.io/badge/Dataset-1001%20samples-green.svg)
+
 
 **ReFACT** (Reddit False And Correct Texts) is a benchmark dataset for evaluating how Large Language Models detect, localize, and correct scientific confabulation.
 
@@ -163,7 +164,7 @@ A: Use the default configuration (multi-error, 1,001 samples) for LLM experiment
 ## Links
 
 - **HuggingFace Dataset**: [huggingface.co/datasets/ddz5431/refact](https://huggingface.co/datasets/ddz5431/refact)
-- **Paper (arXiv)**: [arxiv.org/abs/2509.25868](https://arxiv.org/abs/2509.25868)
+- **Paper (EACL 2026)**: [aclanthology.org/2026.eacl-long.381](https://aclanthology.org/2026.eacl-long.381/)
 - **GitHub**: [github.com/ddz5431/ReFACT](https://github.com/ddz5431/ReFACT)
 
 ## License
@@ -176,14 +177,11 @@ This dataset is released under
 If you use ReFACT, please cite:
 
 ```bibtex
-@article{wang2025refact,
+@inproceedings{wang2025refact,
   title        = {{ReFACT}: A Benchmark for Scientific Confabulation Detection with Positional Error Annotations},
   author       = {Wang, Yindong and Prei{\ss}, Martin and Bague{\~n}o, Margarita and Hoffbauer, Jan Vincent and Ghajar, Abdullatif and Buz, Tolga and de Melo, Gerard},
-  journal      = {arXiv preprint arXiv:2509.25868},
-  year         = {2025},
-  eprint       = {2509.25868},
-  archivePrefix= {arXiv},
-  primaryClass = {cs.CL},
-  url          = {https://arxiv.org/abs/2509.25868},
+  booktitle    = {Proceedings of the 2026 Conference of the European Chapter of the Association for Computational Linguistics (EACL)},
+  year         = {2026},
+  url          = {https://aclanthology.org/2026.eacl-long.381/},
 }
 ```
